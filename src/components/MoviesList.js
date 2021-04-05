@@ -20,7 +20,7 @@ export const MoviesList = (props) => {
     searchPage: [searchPage, setSearchPage],
     search: [search, setSearch],
   } = {
-    type: useState(""),
+    type: useState("popular"),
     id: useState(0),
     page: useState(1),
     searchPage: useState(1),
@@ -46,10 +46,9 @@ export const MoviesList = (props) => {
     }
   }, [type]);
 
-  useEffect(() => {
-    console.log(searchPage);
+  /*   useEffect(() => {
     dispatch(SearchMovie(search, searchPage));
-  }, [searchPage]);
+  }, [searchPage]); */
 
   const showData = () => {
     if (moviesList.loading) {
@@ -69,7 +68,6 @@ export const MoviesList = (props) => {
       );
     }
 
-    console.log(search);
     if (!_.isEmpty(moviesList.data) && _.isEmpty(searchList.data)) {
       return (
         <div className="movies">
