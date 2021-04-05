@@ -60,14 +60,6 @@ export const MoviesList = (props) => {
       );
     }
 
-    if (moviesList.errorMessage !== "") {
-      return (
-        <div className="error-message">
-          <h1>{moviesList.errorMessage}</h1>
-        </div>
-      );
-    }
-
     if (!_.isEmpty(moviesList.data) && _.isEmpty(searchList.data)) {
       return (
         <div className="movies">
@@ -118,6 +110,14 @@ export const MoviesList = (props) => {
               </Link>
             );
           })}
+        </div>
+      );
+    }
+
+    if (moviesList.errorMessage !== "") {
+      return (
+        <div className="error-message">
+          <h1>{moviesList.errorMessage}</h1>
         </div>
       );
     }
