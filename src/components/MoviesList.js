@@ -113,14 +113,6 @@ export const MoviesList = (props) => {
         </div>
       );
     }
-
-    if (moviesList.errorMessage !== "") {
-      return (
-        <div className="error-message">
-          <h1>{moviesList.errorMessage}</h1>
-        </div>
-      );
-    }
   };
 
   return (
