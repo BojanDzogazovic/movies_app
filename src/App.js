@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path={`/${type}`} exact component={MoviesList}>
+        <Route path={`/movies_app/${type}`} exact component={MoviesList}>
           <Header />
           <MoviesList
             state={{
@@ -35,7 +35,7 @@ function App() {
           </NavLink>
           <Movie id={id} />
         </Route>
-        <Redirect to={`/${type}`} />
+        <Redirect to={`/movies_app/${type}`} />
       </Switch>
     </>
   );
