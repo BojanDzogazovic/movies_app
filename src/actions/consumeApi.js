@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const GetMovieLists = (type, page) => async (dispatch) => {
+export const GetMovieLists = (type, page = 1) => async (dispatch) => {
   try {
     dispatch({ type: "MOVIES_LOADING" });
 

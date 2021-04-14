@@ -2,6 +2,7 @@
   "name": "movies_app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.themoviedb.org/",
   "homepage": "https://BojanDzogazovic.github.io/movies_app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
