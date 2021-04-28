@@ -8,8 +8,10 @@ export const Movie = (props) => {
   const dispatch = useDispatch();
   const movie = useSelector((state) => state.Movie);
 
+  let ID = props.id || window.location.href.split("/").pop();
+
   useEffect(() => {
-    dispatch(GetMovie(props.id));
+    dispatch(GetMovie(ID));
   }, []);
 
   const showData = () => {

@@ -46,10 +46,6 @@ export const MoviesList = (props) => {
     }
   }, [type]);
 
-  /*   useEffect(() => {
-    dispatch(SearchMovie(search, searchPage));
-  }, [searchPage]); */
-
   const showData = () => {
     if (moviesList.loading) {
       return (
@@ -122,6 +118,7 @@ export const MoviesList = (props) => {
           className={`movie__filter movie__filter--${topRated ? "active" : ""}`}
           onClick={(e) => {
             searchList.data = [];
+            setSearch("");
             setType("top_rated");
             setPage(1);
           }}
@@ -132,6 +129,7 @@ export const MoviesList = (props) => {
           className={`movie__filter movie__filter--${popular ? "active" : ""}`}
           onClick={(e) => {
             searchList.data = [];
+            setSearch("");
             setType("popular");
             setPage(1);
           }}
@@ -142,6 +140,7 @@ export const MoviesList = (props) => {
           className={`movie__filter movie__filter--${upcoming ? "active" : ""}`}
           onClick={(e) => {
             searchList.data = [];
+            setSearch("");
             setType("upcoming");
             setPage(1);
           }}
@@ -155,6 +154,7 @@ export const MoviesList = (props) => {
           type="text"
           placeholder="Search Movies..."
           className="search-box__input"
+          value={search}
           onChange={(e) => {
             setSearch(e.target.value);
 
