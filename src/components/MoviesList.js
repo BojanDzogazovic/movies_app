@@ -121,6 +121,7 @@ export const MoviesList = (props) => {
             setSearch("");
             setType("top_rated");
             setPage(1);
+            setSearchPage(1);
           }}
         >
           Top Rated Movies
@@ -132,6 +133,7 @@ export const MoviesList = (props) => {
             setSearch("");
             setType("popular");
             setPage(1);
+            setSearchPage(1);
           }}
         >
           Popular Movies
@@ -143,6 +145,7 @@ export const MoviesList = (props) => {
             setSearch("");
             setType("upcoming");
             setPage(1);
+            setSearchPage(1);
           }}
         >
           Upcoming Movies
@@ -157,7 +160,7 @@ export const MoviesList = (props) => {
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
-
+            setSearchPage(1);
             if (e.target.value.length == 0) {
               searchList.data = [];
             }
@@ -166,6 +169,7 @@ export const MoviesList = (props) => {
         <button
           className="search-box__btn"
           onClick={() => {
+            setSearchPage(1);
             dispatch(SearchMovie(search));
           }}
         >
